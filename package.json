@@ -1,0 +1,22 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "## Your Task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianad389/Employee-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianad389/Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/ianad389/Employee-Tracker#readme",
+  "dependencies": {
+    "inquirer": "^9.0.0"
+  }
+}

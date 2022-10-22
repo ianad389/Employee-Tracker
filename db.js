@@ -1,0 +1,6 @@
+const viewEmployees = ('viewEmployees')
+const viewDepartments = ('viewDepartments')
+const viewRoles = ('viewRoles')
+const addDepartment = ('addDepartment')
+const addRole = ('addRole')
+const addEmployee = ('addEmployee')
