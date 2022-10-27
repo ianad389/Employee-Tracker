@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ianad389/Employee-Tracker#readme",
   "dependencies": {
-    "inquirer": "^9.0.0"
+    "inquirer": "^8.2.4",
+    "mysql2": "^2.3.3"
   }
 }
