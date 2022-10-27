@@ -12,8 +12,8 @@ class DB {
 
     }
    
-    addDepartment = () => {
-        return this.connection.promise().query("insert into department set name = ? ")
+    addDepartment = (name) => {
+        return this.connection.promise().query("insert into department (name) values (?) ", name)
 
     }
 

@@ -32,10 +32,12 @@ function main() {
             case "VIEW_ROLES":
                 viewRoles()
                 break
-            case "ADD_DEPARTMENTS":
+            case "ADD_DEPARTMENT":
                 addDepartment()
+                break
             case "ADD_ROLE":
                 addRole()
+                break
             case "ADD_EMPLOYEE":
                 addEMPLOYEE()
         }
@@ -78,13 +80,22 @@ const viewRoles = () => {
 }
 
 const addDepartment = () => {
+    inquirer.prompt([{
 
-    db.addDepartment().then(([rows]) => {
+        name: "name",
+        type: "input",
+        message: "What is the name of the department would you like to add?",
 
-        console.table(rows)
+    }]).then(answer => {
+
+        db.addDepartment(answer.name).then(([rows]) => {
+
+            console.table(rows)
 
 
-    }).then(() => { main() })
+        }).then(() => { main() })
+    }
+    )
 }
 const addRole = () => {
 
