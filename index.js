@@ -12,8 +12,6 @@ const mainQuestions = [
             { name: "add a department", value: "ADD_DEPARTMENT" },
             { name: "add a role", value: "ADD_ROLE" },
             { name: "add an employee ", value: "ADD_EMPLOYEE" },
-
-
         ]
 
     }]
@@ -42,7 +40,6 @@ function main() {
                 addEMPLOYEE()
         }
 
-
     })
 }
 main()
@@ -61,8 +58,6 @@ const viewDepartments = () => {
     db.viewDepartments().then(([rows]) => {
 
         console.table(rows)
-
-
     }).then(() => { main() })
 
 }
@@ -71,12 +66,7 @@ const viewRoles = () => {
     db.viewRoles().then(([rows]) => {
 
         console.table(rows)
-
-
     }).then(() => { main() })
-
-
-
 }
 
 const addDepartment = () => {
@@ -99,19 +89,67 @@ const addDepartment = () => {
 }
 const addRole = () => {
 
-    db.addRole().then(([rows]) => {
+    inquirer.prompt([{
+        name: "name",
+        type: "input",
+        message: "What is the name of the title of the role would you like to add?",
+    },
+    {
+        name: "salary",
+        type: "input",
+        message: "What is the salary of the role?",
+},
+{
+    name: "department",
+    type: "input",
+    message: "What is the name of the department?",
+}
+]).then(answer => {
 
-        console.table(rows)
+        db.addRole(answer.name, answer.salary, answer.department).then(([rows]) => {
+
+            console.table(rows)
 
 
-    }).then(() => { main() })
+        }).then(() => { main() })
+    }
+    )
 }
 const addEmployee = () => {
+    inquirer.prompt([{
+        name: "name",
+        type: "input",
+        message: "What is the name of the Employee would you like to add?",
+    },
+    {
+        name: "first name",
+        type: "input",
+        message: "What is the first name of the Employee would you like to add?",
+    },
+    {
+        name: "last name",
+        type: "input",
+        message: "What is the last name of the Employee would you like to add?",
 
-    db.addEmployee().then(([rows]) => {
+    },
+    {
+        name: "role",
+        type: "input",
+        message: "What is the role of the Employee would you like to add?",
+    },
+    {
+        name: "manager",
+        type: "input",
+        message: "What is the first name of the manager would you like to add?",
+    }
+]).then(answer => {
 
-        console.table(rows)
+        db.addRole(answer.name).then(([rows]) => {
+
+            console.table(rows)
 
 
-    }).then(() => { main() })
+        }).then(() => { main() })
+    }
+    )
 }
