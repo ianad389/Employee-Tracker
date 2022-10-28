@@ -1,4 +1,12 @@
 # 12 SQL: Employee Tracker
+My job was to create a backend emplyee tracker. I created multiple js files to correspond to eachother. I utilize mysql to make sure that is working to my vs code.  
+
+# Screenshot
+![App Screenshot](/Untitled%202.png)
+![App Screenshot](/Untitled.png)
+
+# Video link
+https://drive.google.com/file/d/1qdnw7f13ydF2UKTH2j5xMq2M1BuOvM2r/view
 
 ## Acceptance Criteria
 
