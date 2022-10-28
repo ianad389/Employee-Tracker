@@ -13,9 +13,7 @@ const mainQuestions = [
             { name: "add a role", value: "ADD_ROLE" },
             { name: "add an employee ", value: "ADD_EMPLOYEE" },
         ]
-
     }]
-
 function main() {
     inquirer.prompt(mainQuestions).then(answers => {
 
@@ -37,7 +35,7 @@ function main() {
                 addRole()
                 break
             case "ADD_EMPLOYEE":
-                addEMPLOYEE()
+                addEmployee()
         }
 
     })
@@ -117,17 +115,13 @@ const addRole = () => {
 }
 const addEmployee = () => {
     inquirer.prompt([{
-        name: "name",
-        type: "input",
-        message: "What is the name of the Employee would you like to add?",
-    },
-    {
-        name: "first name",
+    
+        name: "firstname",
         type: "input",
         message: "What is the first name of the Employee would you like to add?",
     },
     {
-        name: "last name",
+        name: "lastname",
         type: "input",
         message: "What is the last name of the Employee would you like to add?",
 
@@ -144,7 +138,7 @@ const addEmployee = () => {
     }
 ]).then(answer => {
 
-        db.addRole(answer.name).then(([rows]) => {
+        db.addEmployee(answer.firstname, answer.lastname,answer.role,answer.manager).then(([rows]) => {
 
             console.table(rows)
 

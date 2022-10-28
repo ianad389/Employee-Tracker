@@ -21,8 +21,8 @@ class DB {
         return this.connection.promise().query("insert into role (title, salary, department_id) values (?, ?, ?) ", [name, salary, department])
 
     }
-    addEmployee = (name,firstname, lastname,role, manager ) => {
-        return this.connection.promise().query("insert into employee (first name, last name, role, manager) values (?) ", [name,firstname,lastname,role,manager])
+    addEmployee = (firstname, lastname,role, manager ) => {
+        return this.connection.promise().query("insert into employee (first_name, last_name, role_id, manager_id) values (?, ?, ?, ?) ", [firstname,lastname,role,manager])
 
     }
 }
